@@ -4,9 +4,3 @@
 DELETE
 FROM artists
 WHERE id = "6M2wZ9GZgrQXHCFfjv46we";
-
--- Write your SQL above and don't change below
-
-SELECT COUNT(*)
-FROM artists
-WHERE id = "6M2wZ9GZgrQXHCFfjv46we";
