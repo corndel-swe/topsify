@@ -1,43 +1,80 @@
 # Workshop
 
 For today's workshop, we'll be providing the data required for graphs and charts
-to work on the Topsify website!
+to work on the Topsify website. Follow the steps below to generate the necessary
+reports and visualise the data.
 
-There's an extra page in the docs on
-[many-to-many relationships](https://tech-docs.corndel.com/sql/many-to-many.html)
-which will help a lot with the workshop.
+## Chart 1: Most explicit artists
 
-## Total Track Duration per Album
+Visiting `/charts/1.html` should show a bar chart showing the count of explicit
+tracks by each artist, ordered by explicit track count. It should only show
+artists who have at least one explicit track.
 
-A bar chart showing the total duration of all tracks for each album.
+This chart expects the data to be available in `reports/chart-1.json`. The JSON
+should look like this:
 
-Just include the 10 longest albums.
-
-```sql
-SELECT albums.name, SUM(tracks.duration_ms) AS total_duration
-FROM albums
-JOIN tracks ON albums.id = tracks.album_id
-GROUP BY albums.name;
+```json
+[
+  {
+    "artist_name": "Taylor Swift",
+    "explicit_track_count": 999
+  }
+  // ... more artists
+]
 ```
 
-## Most Explicit Albums
+Write the query, generate the required report and visit the page to make sure it
+works.
 
-Bar chart
+## Chart 2: Album characteristics
 
-## Radar chart per artist
-
-Find the avg of:
+Visiting `/charts/2.html` should show a radar chart for each album summarising
+its average characteristics. The axes of the radar chart are
 
 - danceability
-
 - energy
-
 - speechiness
-
 - acousticness
-
 - liveness
 
-- valence
+Generate a JSON report that looks like this:
 
-for each album and turn it into a radar chart per album.
+```json
+[
+  {
+    "artist_name": "Deftones",
+    "album_name": "White Pony",
+    "average_danceability": 0.5,
+    "average_energy": 0.5,
+    "average_speechiness": 0.5,
+    "average_acousticness": 0.5,
+    "average_liveness": 0.5
+  }
+  // ... more albums
+]
+```
+
+Visit `/charts/2.html` to see the output.
+
+## Chart 3: Loudness over time
+
+Are albums getting louder?
+
+Write a query which generates `reports/chart-3.json` containing entries of the
+form:
+
+```json
+[
+  {
+    "album_name": "Album 1",
+    "average_loudness": -5.0,
+    "release_date": "2010-01-01"
+  },
+  {
+    "album_name": "Album 2",
+    "average_loudness": -4.5,
+    "release_date": "2011-01-01"
+  }
+  // ... more albums
+]
+```
