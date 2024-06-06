@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200px" src="./web/logo.png" alt="Topsify logo"/>
+  <img width="200px" src="./web/img/logo.png" alt="Topsify logo"/>
 </p>
 
 # Topsify
