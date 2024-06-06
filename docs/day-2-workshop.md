@@ -4,6 +4,13 @@ For today's workshop, we'll be providing the data required for graphs and charts
 to work on the Topsify website. Follow the steps below to generate the necessary
 reports and visualise the data.
 
+> [!TIP]
+>
+> It is possible to join more than two tables together using multiple
+> `INNER JOIN` statements. There's an
+> [example here](https://tech-docs.corndel.com/sql/many-to-many.html#complex-queries)
+> to demonstrate how this works.
+
 ## Chart 1: Most explicit artists
 
 Visiting `/charts/1.html` should show a bar chart showing the count of explicit
@@ -23,8 +30,22 @@ should look like this:
 ]
 ```
 
+> [!TIP]
+>
+> Use the `AS` keyword to redefine the key in your results. For example,
+>
+> ```sql
+> .mode json
+> SELECT artists.name AS artist_name
+> ```
+
 Write the query, generate the required report and visit the page to make sure it
 works.
+
+> [!NOTE]
+>
+> Remember to put `.mode json` at the top of your `.sql` file to get `sqlite3`
+> to create JSON reports.
 
 ## Chart 2: Album characteristics
 
@@ -78,3 +99,15 @@ form:
   // ... more albums
 ]
 ```
+
+## Extension
+
+Remember the Albums page, at `/albums.html`? Well, it isn't great. The Albums
+pages just shows the `artist_id`. It would be much better if it showed the
+actual artist name there.
+
+See if you can improve the `albums.json` report and modify the `albums.js` to
+show the name of the artist, not just the id.
+
+Perhaps you could do something similar for the `album_id` in the Tracks page at
+`/tracks.html`, too?
