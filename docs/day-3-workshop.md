@@ -41,7 +41,11 @@ erDiagram
   tracks ||--o{ playlist_tracks : "included_in"
 ```
 
-Write some migrations to create the `playlists` and `playlist_tracks` tables.
+## Migrations
 
-Write some seed data to model users creating playlists and adding tracks to
-their playlists.
+Write migrations to create the `playlists` and `playlist_tracks` tables.
+
+## Seed data
+
+Write seed data to model users creating playlists and adding tracks to their
+playlists.
