@@ -43,10 +43,9 @@ Oh no! Someone has deleted all the data in the users table!
 
 Fortunately, their data is backed up in `reports/users.json`. Phew!
 
-Write a program which reads this JSON and generates a file at
-`db/seeds/users.sql`.
-
-It should begin like this:
+Somebody has started manually writing out the SQL statements in
+`db/seeds/users.sql` to add them back into the table, but they gave up after
+three rows:
 
 ```sql
 INSERT INTO users VALUES(1,'Sally_Kunde','Sally','Kunde','Sally.Kunde49@yahoo.com','https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/730.jpg','MNkcfO7qfSqzJl5');
@@ -54,15 +53,15 @@ INSERT INTO users VALUES(2,'Ebba.Cole','Ebba','Cole','Ebba.Cole@gmail.com','http
 INSERT INTO users VALUES(3,'Gerson_Barton','Gerson','Barton','Gerson.Barton@gmail.com','https://avatars.githubusercontent.com/u/69465068','OTSg4YbbUQIMZ6P');
 ```
 
-When you're done, run
+Write a program in any programming language which reads the JSON and generates a
+SQL file at `db/seeds/users.sql` which contains all 200 `INSERT` statements.
+When you're done, run the SQL file with
 
 ```bash
 sqlite3 db/db.sqlite < db/seeds/users.sql
 ```
 
-to insert the user data into the database.
-
-Phew!
+to add the users back into the database.
 
 ## Extension
 
