@@ -37,21 +37,40 @@ The Tracks page expects a `tracks.json` report in the reports page! Generate it,
 and play around with the query to sequence and paginate the tracks in different
 ways.
 
+## Users
+
+Oh no! Someone has deleted all the data in the users table!
+
+Fortunately, their data is backed up in `reports/users.json`. Phew!
+
+Write a program which reads this JSON and generates a file at
+`db/seeds/users.sql`.
+
+It should begin like this:
+
+```sql
+INSERT INTO users VALUES(1,'Sally_Kunde','Sally','Kunde','Sally.Kunde49@yahoo.com','https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/730.jpg','MNkcfO7qfSqzJl5');
+INSERT INTO users VALUES(2,'Ebba.Cole','Ebba','Cole','Ebba.Cole@gmail.com','https://avatars.githubusercontent.com/u/54619199','nz5H7F98ukot7yv');
+INSERT INTO users VALUES(3,'Gerson_Barton','Gerson','Barton','Gerson.Barton@gmail.com','https://avatars.githubusercontent.com/u/69465068','OTSg4YbbUQIMZ6P');
+```
+
+When you're done, run
+
+```bash
+sqlite3 db/db.sqlite < db/seeds/users.sql
+```
+
+to insert the user data into the database.
+
+Phew!
+
 ## Extension
 
 Ready for some reverse engineering? Let's try building a page to display all the
 users.
 
-Decide whether you'd like the page to look more like the artists page, the
-albums page, or the tracks page. Copy the `.html`, `.js` and `.css` files of
-your choice and rename them to `users.html`, `users.js` and `users.css`.
-
-Go through the files and hack away to get them displaying a list of users.
+Copy the `albums.html`, `albums.js` and `albums.css` files and rename them to
+`users.html`, `users.js` and `users.css`. Go through the files and hack away to
+get them displaying a list of users.
 
 Can you add a link to the Users page in the header of the website?
-
-Make sure to generate `users.json` so your page has something to display.
-
-> [!WARNING]
->
-> Don't share the users' passwords!

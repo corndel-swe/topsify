@@ -49,8 +49,8 @@ erDiagram
     users {
         INTEGER id PK "Primary Key"
         TEXT username "Unique"
-        TEXT firstName
-        TEXT lastName
+        TEXT first_name
+        TEXT last_name
         TEXT email "Unique"
         TEXT avatar
         TEXT password "Hashed"

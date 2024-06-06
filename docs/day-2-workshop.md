@@ -1,3 +1,12 @@
+# Workshop
+
+For today's workshop, we'll be providing the data required for graphs and charts
+to work on the Topsify website!
+
+There's an extra page in the docs on
+[many-to-many relationships](https://tech-docs.corndel.com/sql/many-to-many.html)
+which will help a lot with the workshop.
+
 ## Total Track Duration per Album
 
 A bar chart showing the total duration of all tracks for each album.

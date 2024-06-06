@@ -47,7 +47,3 @@ function populateTracksTable(tracks) {
     tableBody.appendChild(row)
   })
 }
-
-function initializeDataTable() {
-  $('#tracksTable').DataTable()
-}
