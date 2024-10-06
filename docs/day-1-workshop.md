@@ -58,10 +58,14 @@ SQL file at `db/seeds/users.sql` which contains all 200 `INSERT` statements.
 When you're done, run the SQL file with
 
 ```bash
-sqlite3 db/db.sqlite < db/seeds/users.sql
+sqlite3 db/db.sqlite "DELETE FROM users;" # empty the table
+sqlite3 db/db.sqlite < db/seeds/users.sql # refill it
 ```
 
 to add the users back into the database.
+
+It might not work straight away - can you fix it? (Hint: SQL doesn't like the
+`'` character.)
 
 ## Extension
 
