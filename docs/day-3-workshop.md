@@ -84,12 +84,13 @@ sqlite3 db/db.sqlite < db/seeds/playlist_tracks.sql
 
 ## Playlists page
 
-Now that you've created the schema and seeded the data, let's create a UI to
-display the playlists!
+Now that you've created the schema and seeded the data, let's generate the
+reports needed for the playlists UI!
 
-Create a new HTML page at `web/playlists.html` with a dropdown that shows all
-available playlists. When a user selects a playlist from the dropdown, the page
-should display all the tracks in that playlist.
+A playlists page has been created at `web/playlists.html`. It has a dropdown to
+select playlists and will display the tracks in each playlist. Once you generate
+the required JSON reports, you should be able to select playlists from the dropdown 
+and see their tracks.
 
 To make this work, you'll need to:
 
@@ -104,26 +105,23 @@ To make this work, you'll need to:
    > Remember to put `.mode json` at the top of your `.sql` file to get `sqlite3`
    > to create JSON reports.
 
+   > [!TIP]
+   >
+   > The playlists page expects each playlist object to include the `username`
+   > of the user who created it. You'll need to JOIN with the users table!
+
 2. For each playlist, write a query that JOINs across the many-to-many
    relationship to get all tracks in that playlist. Generate JSON files like
    `reports/playlist-1.json`, `reports/playlist-2.json`, etc.
 
    > [!TIP]
    >
-   > You'll need to JOIN three tables: `tracks`, `playlist_tracks`, and
-   > potentially others depending on what information you want to display.
+   > You'll need to JOIN multiple tables: `playlist_tracks` → `tracks` →
+   > `albums` → `artists` to get all the information needed to display each
+   > track nicely (track name, artist name, album name, album image, duration).
 
-3. Create the HTML page with:
-   - A dropdown (`<select>`) element populated from `playlists.json`
-   - A container to display the tracks
-   - JavaScript that fetches the appropriate `playlist-{id}.json` file when a
-     playlist is selected
-
-4. Add a link to your new playlists page in the navigation bar of the existing
-   HTML pages
-
-With Live Server running, you should now be able to select different playlists
-and see their tracks displayed!
+With Live Server running, visit `/playlists.html` and you should be able to
+select different playlists and see their tracks displayed!
 
 ## Stretch challenges
 
