@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/albums.css">
-  <script src="js/albums.js" defer></script>
-  <title>Albums - Topsify</title>
+  <link rel="stylesheet" href="css/playlists.css">
+  <script src="js/playlists.js" defer></script>
+  <title>Playlists - Topsify</title>
 </head>
 
 <body>
@@ -28,9 +28,15 @@
   </header>
 
   <main class="main">
-    <section class="albums">
-      <h2 class="albums__title">Our Albums</h2>
-      <div class="albums__grid" id="albumsGrid"></div>
+    <section class="playlists">
+      <h2 class="playlists__title">Your Playlists</h2>
+      <div class="playlists__selector">
+        <label for="playlistDropdown">Select a playlist:</label>
+        <select id="playlistDropdown" class="playlists__dropdown">
+          <option value="">-- Choose a playlist --</option>
+        </select>
+      </div>
+      <div id="playlistTracks" class="playlists__tracks"></div>
     </section>
   </main>
 
